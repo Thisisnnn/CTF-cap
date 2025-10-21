@@ -2,6 +2,13 @@
 	import { page } from '$app/state';
 	import logo from '$lib/images/svelte-logo.svg';
 	import github from '$lib/images/github.svg';
+	import {
+		Dropdown,
+		DropdownItem,
+		DropdownMenu,
+		DropdownToggle
+	} from '@sveltestrap/sveltestrap';
+	import 'bootstrap/dist/css/bootstrap.min.css';
 </script>
 
 <header>
@@ -25,10 +32,14 @@
 			<li aria-current={page.url.pathname.startsWith('/blog') ? 'page' : undefined}>
 				<a href="/blog">Blog</a>
 			</li>
-			<li aria-current={page.url.pathname.startsWith('/community') ? 'page' : undefined}>
-				<a href="/community">Community</a>
-			</li>
-	
+			<Dropdown direction="down">
+			<DropdownToggle tag="a" caret class="nav-link">Community</DropdownToggle>
+			<DropdownMenu>
+				<DropdownItem>Community Support</DropdownItem>
+				<DropdownItem>Discord</DropdownItem>
+				<DropdownItem>idk</DropdownItem>
+			</DropdownMenu>
+			</Dropdown>
 			<li aria-current={page.url.pathname.startsWith('/dev') ? 'page' : undefined}>
 				<a href="/dev">Development</a>
 			</li>
@@ -136,5 +147,107 @@
 	a:hover {
 		color: var(--color-theme-1);
 	}
+
+	.nav-link {
+  background: transparent !important;
+  border: none !important;
+  padding: 0 0.5rem;
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-text);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  text-decoration: none; /* removes underline */
+}
+
+.nav-link:hover,
+.nav-link:focus,
+.nav-link:active {
+  background: transparent !important;
+  color: var(--color-theme-1);
+  outline: none;
+}
+
+/* align the caret nicely */
+.nav-link .dropdown-toggle::after {
+  margin-left: 0.25rem;
+  vertical-align: middle;
+}
+
+.dropdown-menu {
+  border: none;            /* remove border */
+  box-shadow: none;        /* remove shadow */
+  background: white;       /* or match your navbar if you want inline style */
+  padding: 0.25rem 0;
+}
+
+/* Update dropdown styles */
+:global(.dropdown-toggle),
+:global(.dropdown-item) {
+        font-weight: 700 !important;
+        font-size: 0.8rem !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.1em !important;
+        color: var(--color-text) !important;
+        background-color: transparent !important;
+        padding: 0.5rem 1rem !important;
+        line-height: 1.5 !important;
+    }
+
+    :global(.dropdown-menu) {
+        background-color: var(--background) !important;
+        border: 1px solid rgba(0,0,0,.15) !important;
+        border-radius: 6px !important;
+        margin-top: 0.5rem !important;
+        padding: 0.5rem 0 !important;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1) !important;
+    }
+
+    :global(.dropdown-item:hover),
+    :global(.dropdown-toggle:hover) {
+        color: var(--color-theme-1) !important;
+        background-color: transparent !important;
+    }
+
+    :global(.dropdown-item:active),
+    :global(.dropdown-item:focus),
+    :global(.dropdown-item.active) {
+        background-color: transparent !important;
+        color: var(--color-text) !important;
+    }
+
+    /* Remove dropdown arrow spacing */
+    :global(.dropdown-toggle::after) {
+        margin-left: 0.5em !important;
+    }
+
+    :global(.dropdown-item),
+    :global(.dropdown-item:active),
+    :global(.dropdown-item:focus),
+    :global(.dropdown-item.active),
+    :global(.dropdown-item:active) {
+        background-color: transparent !important;
+        transition: none !important;
+        color: var(--color-text) !important;
+    }
+
+    :global(.dropdown-item:hover) {
+        background-color: rgba(0, 0, 0, 0.05) !important;
+        color: var(--color-theme-1) !important;
+    }
+
+    :global(.dropdown-menu.show) {
+        background-color: var(--background) !important;
+        border: none;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    /* Remove any transitions that might cause flashing */
+    :global(.dropdown *) {
+        transition: color 0.2s linear !important;
+    }
 </style>
 

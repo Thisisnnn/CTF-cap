@@ -35,8 +35,9 @@
 <section class="get-started">
 	<div class="gs-inner">
 		<h2>Get started</h2>
-		<p class="lead">Ready to explore? This is a placeholder for a "Get started" guide — content coming soon.</p>
-		<a class="btn-cta" href="/get-started" aria-disabled="true" on:click|preventDefault>
+		<p class="lead">Ready to explore?<br>
+			Go here to have the "Get started" guide.</p>
+		<a class="btn-cta" href="/dev" aria-disabled="true">
 			Coming soon — Get started
 		</a>
 	</div>

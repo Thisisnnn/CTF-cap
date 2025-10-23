@@ -1,21 +1,169 @@
-<div class="text-column">
-	<h1>About this app</h1>
+<section class="about-page">
+  <h1>About CTFcap</h1>
+  <p class="subtitle">An advanced capture-the-flag platform built for security enthusiasts</p>
 
-	<p>
-		This is a <a href="https://svelte.dev/docs/kit">SvelteKit</a> app. You can make your own by typing
-		the following into your command line and following the prompts:
-	</p>
+  <div class="section mission">
+    <h2>Our Mission</h2>
+    <p>CTFcap is designed to revolutionize how security professionals and enthusiasts practice their skills. We provide a robust platform for hosting, participating in, and learning from capture-the-flag challenges.</p>
+  </div>
 
-	<pre>npx sv create</pre>
+  <div class="section features">
+    <h2>Key Features</h2>
+    <ul class="feature-list">
+      <li>Tools made for CTF competitions</li>
+    </ul>
+  </div>
 
-	<p>
-		The page you're looking at is purely static HTML, with no client-side interactivity needed.
-		Because of that, we don't need to load any JavaScript. Try viewing the page's source, or opening
-		the devtools network panel and reloading.
-	</p>
+  <div class="section team">
+    <h2>Our Team</h2>
+    <div class="team-grid">
+      <div class="team-member">
+        <h3>Alice Smith</h3>
+        <p>Security Research Lead</p>
+        <span class="tag">Exploit Dev</span>
+      </div>
+      <div class="team-member">
+        <h3>Bob Johnson</h3>
+        <p>Platform Architect</p>
+        <span class="tag">Infrastructure</span>
+      </div>
+      <div class="team-member">
+        <h3>Carol Davis</h3>
+        <p>Community Lead</p>
+        <span class="tag">Education</span>
+      </div>
+    </div>
+  </div>
 
-	<p>
-		The <a href="/sverdle">Sverdle</a> page illustrates SvelteKit's data loading and form handling. Try
-		using it with JavaScript disabled!
-	</p>
-</div>
+  <div class="section tech">
+    <h2>Technology Stack</h2>
+    <div class="tech-stack">
+      <span class="tech-item">SvelteKit</span>
+      <span class="tech-item">Python</span>
+    </div>
+  </div>
+</section>
+
+<style>
+  :root {
+    --primary: #2563eb;
+    --secondary: #3b82f6;
+    --bg: #ffffff;
+    --text: #0f172a;
+    --muted: #64748b;
+  }
+
+  .about-page {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+    color: var(--text);
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .subtitle {
+    text-align: center;
+    color: var(--muted);
+    margin-bottom: 3rem;
+    font-size: 1.1rem;
+  }
+
+  .section {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e5e7eb;
+  }
+
+  .section h2 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    color: var(--text);
+  }
+
+  .feature-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    list-style: none;
+    padding: 0;
+  }
+
+  .feature-list li {
+    padding: 0.5rem;
+    background: #f8fafc;
+    border-radius: 6px;
+    border: 1px solid #e5e7eb;
+  }
+
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 1.5rem;
+  }
+
+  .team-member {
+    text-align: center;
+    padding: 1.5rem;
+    background: #f8fafc;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+  }
+
+  .team-member h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: var(--text);
+  }
+
+  .team-member p {
+    color: var(--muted);
+    margin: 0.3rem 0;
+  }
+
+  .tag {
+    display: inline-block;
+    padding: 0.2rem 0.6rem;
+    background: var(--primary);
+    color: white;
+    border-radius: 999px;
+    font-size: 0.8rem;
+  }
+
+  .tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+  }
+
+  .tech-item {
+    padding: 0.4rem 0.8rem;
+    background: #f1f5f9;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    color: var(--text);
+    border: 1px solid #e5e7eb;
+  }
+
+  @media (max-width: 640px) {
+    .about-page {
+      padding: 1rem;
+    }
+    
+    .team-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+  }
+</style>

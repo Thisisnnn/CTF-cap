@@ -33,7 +33,7 @@
 					<DropdownMenu>
 						<DropdownItem>Community Support</DropdownItem>
 						<DropdownItem>Discord</DropdownItem>
-						<DropdownItem>idk</DropdownItem>
+						<DropdownItem>COntact Us</DropdownItem>
 					</DropdownMenu>
 				</Dropdown>
 			</li>

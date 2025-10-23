@@ -11,7 +11,7 @@
 	<div class="text-content">
 		<h1>CTF</h1>
 		<h2>cap</h2>
-		<p>Un OS léger pour les CTFs</p>
+		<p>An OS conceived for CTF competitions</p>
 
 		<div class="buttons">
 			<button><a href="/Documentation">Documentation</a></button>
@@ -25,11 +25,22 @@
 </section>
 
 <section class="Infos">
-	<h2>Pourquoi CTFcap?</h2>
-	<p>CTFcap est conçu pour être un système d'exploitation léger et efficace, spécialement adapté aux besoins des compétitions de Capture The Flag (CTF). Il offre un environnement sécurisé et optimisé pour les participants, avec des outils préinstallés et une interface utilisateur intuitive.</p>
+	<h2>What is CTFcap?<br>
+		What's the difference between CTFcap and other OS?</h2>
+	<p>CTFcap is a OS made to have all the tools you need for CTF competitions.<br>
+	It is lightweight, fast, and easy to use. Unlike other OS, CTFcap is specifically designed for CTFs, with a focus on usability and performance.
+	</p>
 </section>
 
-
+<section class="get-started">
+	<div class="gs-inner">
+		<h2>Get started</h2>
+		<p class="lead">Ready to explore? This is a placeholder for a "Get started" guide — content coming soon.</p>
+		<a class="btn-cta" href="/get-started" aria-disabled="true" on:click|preventDefault>
+			Coming soon — Get started
+		</a>
+	</div>
+</section>
 
 <style>
 	.main {
@@ -123,5 +134,45 @@
 		border-radius: 15px;
 		background-color: #e6f1fa;
 		padding: 20px;
+	}
+
+		.get-started {
+		margin: 2rem 0;
+		display: flex;
+		justify-content: center;
+	}
+	.get-started .gs-inner {
+		background: rgba(0,0,0,0.03);
+		border: 1px dashed rgba(0,0,0,0.1);
+		padding: 1.25rem 1.5rem;
+		border-radius: 8px;
+		text-align: center;
+		max-width: 42rem;
+		width: 100%;
+	}
+	.get-started h2 {
+		margin: 0 0 0.5rem 0;
+		font-size: 1.25rem;
+	}
+	.get-started .lead {
+		margin: 0 0 1rem 0;
+		color: var(--color-text);
+	}
+	.btn-cta {
+		display: inline-block;
+		padding: 0.5rem 1rem;
+		background: transparent;
+		border: 1px solid rgba(0,0,0,0.12);
+		border-radius: 6px;
+		color: var(--color-text);
+		text-decoration: none;
+		font-weight: 700;
+		font-size: 0.9rem;
+		cursor: not-allowed;
+		opacity: 0.85;
+	}
+	.btn-cta {
+		cursor: pointer;
+		opacity: 1;
 	}
 </style>

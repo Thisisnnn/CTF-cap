@@ -175,7 +175,9 @@
   }
 
   :global([data-theme='dark']) .team-member h3,
-  :global([data-theme='dark']) .section h2 {
+  :global([data-theme='dark']) .section h2, 
+  :global([data-theme='dark']) .feature-list li, 
+  :global([data-theme='dark']) .tech-item {
     color: rgba(255, 255, 255, 0.85);
   }
 

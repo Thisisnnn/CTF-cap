@@ -16,13 +16,13 @@
 </section>
 
 <style>
-  :root{
-    /* adjust these site variables globally if needed */
-    --card-bg: var(--site-card-bg, #ffffff);
-    --card-border: var(--site-card-border, #e6edf3);
-    --accent: var(--site-accent, #2563eb);
-    --muted: var(--site-muted, #6b7280);
-    --text: var(--site-text, #0f1724);
+  /* LIGHT MODE */
+  :root {
+    --card-bg: #ffffff;
+    --card-border: #e6edf3;
+    --accent: #2563eb;
+    --muted: #6b7280;
+    --text: #0f1724;
   }
 
   .blog{
@@ -58,6 +58,7 @@
   .blog-post h2{
     margin: 0 0 0.35rem 0;
     font-size: 1.25rem;
+    color: var(--text);
   }
   .blog-post small{
     color: var(--muted);
@@ -70,6 +71,34 @@
     margin: 0.5rem 0 0.9rem 0;
     line-height: 1.5;
     color: rgba(15,23,36,0.9);
+  }
+
+  /* DARK MODE */
+  :global([data-theme='dark']) .blog{
+    color: rgba(235, 240, 255, 0.9);
+  }
+
+  :global([data-theme='dark']) .blog-post {
+    background: rgba(20, 40, 75, 0.85); /* deep navy */
+    border-color: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.25);
+  }
+
+  :global([data-theme='dark']) .blog-post:hover {
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+    transform: translateY(-6px) scale(1.02);
+  }
+
+  :global([data-theme='dark']) .blog-post h2{
+    color: rgba(235, 240, 255, 0.95);
+  }
+
+  :global([data-theme='dark']) .blog-post small {
+    color: rgba(180, 200, 255, 0.7);
+  }
+
+  :global([data-theme='dark']) .blog-post p {
+    color: rgba(235, 240, 255, 0.85);
   }
 
   @media (max-width: 560px){

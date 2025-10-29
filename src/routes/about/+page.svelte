@@ -156,6 +156,34 @@
     border: 1px solid #e5e7eb;
   }
 
+  /* Add dark mode styles */
+  :global([data-theme='dark']) .section {
+    background: rgba(13, 75, 130, 0.2);
+    border-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 6px rgb(255, 255, 255);
+  }
+
+  :global([data-theme='dark']) .feature-list li,
+  :global([data-theme='dark']) .team-member,
+  :global([data-theme='dark']) .tech-item {
+    background: rgba(13, 75, 130, 0.3);
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+
+  :global([data-theme='dark']) .tag {
+    background: var(--primary);
+  }
+
+  :global([data-theme='dark']) .team-member h3,
+  :global([data-theme='dark']) .section h2 {
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  :global([data-theme='dark']) p,
+  :global([data-theme='dark']) .subtitle {
+    color: rgba(255, 255, 255, 0.6);
+  }
+
   @media (max-width: 640px) {
     .about-page {
       padding: 1rem;

@@ -39,7 +39,7 @@ python3 installation.py
 
 <style>
 	.Installation, .System-Overview, .Tools-and-Features {
-		margin: 2rem 0;
+		margin: 1.25rem 0;
 		padding: 1rem;
 		border: 1px solid #b6cfe4;
 		border-radius: 8px;
@@ -74,4 +74,48 @@ python3 installation.py
 		z-index: 5;
 	}
 	.copy-btn:active { transform: translateY(1px); }
+
+/* 🌙 Stylish Dark Mode for Documentation Sections */
+:global([data-theme='dark']) .Installation,
+:global([data-theme='dark']) .System-Overview,
+:global([data-theme='dark']) .Tools-and-Features {
+  background-color: rgba(20, 40, 75, 0.85); /* deep navy with some transparency */
+  border-color: rgba(255, 255, 255, 0.15); /* subtle border */
+  color: rgba(235, 240, 255, 0.9); /* soft off-white text for contrast */
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.75);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+:global([data-theme='dark']) .code-wrapper pre {
+  background: rgba(10, 25, 55, 0.95);*
+  border-color: rgba(255, 255, 255, 0.1);
+  color: rgba(220, 230, 255, 0.95);
+  font-family: 'Fira Mono', monospace;
+  border-radius: 6px;
+  padding: 1rem;
+  overflow-x: auto;
+  box-shadow: inset 0 0 6px rgba(0,0,0,0.2);
+}
+
+:global([data-theme='dark']) .copy-btn {
+  background: rgba(30, 60, 110, 0.7);
+  border-color: rgba(255, 255, 255, 0.25);
+  color: rgba(220, 230, 255, 0.95);
+  font-weight: 700;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+:global([data-theme='dark']) .copy-btn:hover {
+  background: rgba(40, 90, 160, 0.85);
+}
+
+:global([data-theme='dark']) h2 {
+  color: #cce0ff;
+}
+
+:global([data-theme='dark']) p {
+  color: rgba(220, 230, 255, 0.85);
+}
+
 </style>

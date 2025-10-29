@@ -37,7 +37,7 @@
 		<h2>Get started</h2>
 		<p class="lead">Ready to explore?<br>
 			Go here to have the "Get started" guide.</p>
-		<a class="btn-cta" href="/dev" aria-disabled="true">
+		<a class="btn-cta" href="/docs" aria-disabled="true">
 			Coming soon — Get started
 		</a>
 	</div>
@@ -176,4 +176,94 @@
 		cursor: pointer;
 		opacity: 1;
 	}
+
+/* Dark Mode */
+:root {
+	--color-theme-1: #4db3ff; /* accent light blue */
+	--color-theme-2: #1e81d3; /* secondary blue */
+	--color-text: rgba(255, 255, 255, 0.9);
+	--color-bg-dark: #0a1523; /* dark navy background */
+	--color-surface-dark: #102842; /* panels / cards */
+	--color-hover: #2d91e8;
+}
+
+/* Base dark background */
+[data-theme='dark'] body {
+	background-color: var(--color-bg-dark);
+	color: var(--color-text);
+}
+
+/* Main title section */
+[data-theme='dark'] .main h1 {
+	color: var(--color-theme-1);
+}
+
+[data-theme='dark'] .main h2 {
+	color: var(--color-theme-2);
+}
+
+/* Make text readable */
+[data-theme='dark'] .main p,
+[data-theme='dark'] p {
+	color: rgba(235, 245, 255, 0.9); /* brighter, soft white-blue */
+}
+
+/* Fix the Info box */
+[data-theme='dark'] .Infos {
+	background-color: var(--color-surface-dark);
+	color: var(--color-text);
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+	border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+[data-theme='dark'] .Infos h2 {
+	color: var(--color-theme-1);
+}
+
+/* Buttons */
+[data-theme='dark'] button {
+	background-color: var(--color-theme-2);
+	color: white;
+}
+
+[data-theme='dark'] button:hover {
+	background-color: var(--color-theme-1);
+	transform: translateY(-3px);
+	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+}
+
+[data-theme='dark'] button a {
+	color: white;
+	text-decoration: none;
+}
+
+/* Get started card */
+[data-theme='dark'] .get-started .gs-inner {
+	background: rgba(255, 255, 255, 0.05);
+	border: 1px dashed rgba(255, 255, 255, 0.1);
+}
+
+[data-theme='dark'] .btn-cta {
+	border-color: rgba(255, 255, 255, 0.2);
+	color: var(--color-theme-1);
+}
+
+[data-theme='dark'] .btn-cta:hover {
+	border-color: var(--color-theme-1);
+	background: rgba(77, 179, 255, 0.1);
+}
+
+/* Images */
+[data-theme='dark'] .image-content img {
+	filter: brightness(0.95) contrast(1.1);
+}
+
+/* Smooth transitions */
+body,
+button,
+a,
+.Infos,
+.gs-inner {
+	transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
 </style>

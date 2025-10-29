@@ -7,6 +7,26 @@
 		DropdownToggle
 	} from '@sveltestrap/sveltestrap';
 	import 'bootstrap/dist/css/bootstrap.min.css';
+	import Github from '$lib/images/github.svg';
+	import SvelteLogo from '$lib/images/svelte-logo.svg';
+	
+	let darkMode = false;
+
+	function toggleTheme() {
+		darkMode = !darkMode;
+		document.documentElement.setAttribute('data-theme', darkMode ? 'dark' : 'light');
+	}
+
+	// New: helper functions so you can override navbar dark-mode colors at runtime
+	export function setNavDarkBackground(color: string) {
+		document.documentElement.style.setProperty('--nav-bg-dark', color);
+	}
+	export function setNavDarkText(color: string) {
+		document.documentElement.style.setProperty('--nav-text-dark', color);
+	}
+	export function setNavDarkHover(color: string) {
+		document.documentElement.style.setProperty('--nav-hover-dark', color);
+	}
 </script>
 
 <header>
@@ -33,7 +53,7 @@
 					<DropdownMenu>
 						<DropdownItem>Community Support</DropdownItem>
 						<DropdownItem>Discord</DropdownItem>
-						<DropdownItem>COntact Us</DropdownItem>
+						<DropdownItem>Contact Us</DropdownItem>
 					</DropdownMenu>
 				</Dropdown>
 			</li>
@@ -45,19 +65,56 @@
 			<path d="M0,0 L0,3 C0.5,3 0.5,3 1,2 L2,0 Z" />
 		</svg>
 	</nav>
+
+	<div class="corner">
+		<button on:click={toggleTheme}>
+		{#if darkMode}
+			<img src={SvelteLogo} alt="Toggle logo" />
+		{:else}
+			<img src={Github} alt="Toggle logo" />
+		{/if}
+	</button>
+	</div>
 </header>
 
 <style>
+
 	header {
 		display: flex;
 		justify-content: center;
 		width: 100%;
 	}
+	.corner {
+		width: 3em;
+		height: 3em;
+	}
+
+	.corner img {
+		padding-top: 10px;
+		width: 2em;
+		height: 2em;
+		object-fit: contain;
+	}
+
+	/* Corner button styling */
+.corner button {
+  background: none;      /* removes default button background */
+  border: none;          /* removes border */
+  padding: 0;            /* remove extra padding */
+  cursor: pointer;       /* pointer cursor on hover */
+}
+
+.corner button:focus,
+.corner button:hover {
+  outline: none;         /* removes the focus outline */
+  background: none;      /* prevents any hover background */
+}
 
 	nav {
 		display: flex;
 		justify-content: center;
-		--background: rgba(255, 255, 255, 0.7);
+		/* use the global nav variable so dark mode can swap it */
+		--background: var(--nav-bg, rgba(255, 255, 255, 0.7));
 		width: fit-content;
 	}
 
@@ -154,7 +211,6 @@
 		color: var(--color-text) !important;
 	}
 
-	/* Remove dropdown arrow spacing */
 	:global(.dropdown-toggle::after) {
 		margin-left: 0.5em !important;
 	}
@@ -180,7 +236,6 @@
 		box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 	}
 
-	/* Remove any transitions that might cause flashing */
 	:global(.dropdown *) {
 		transition: color 0.2s linear !important;
 	}
@@ -199,5 +254,37 @@
 		display: flex !important;
 		align-items: center !important;
 	}
-</style>
 
+	/* 🌙 DARK MODE - use CSS variables so the color is easy to override */
+	/* set the per-nav background variable from the dark-theme variable */
+	[data-theme='dark'] nav {
+	  --background: var(--nav-bg-dark, rgba(13,75,130,0.9)) !important;
+	}
+
+	/* use the per-nav background for the containers so svg/ul/dropdowns follow */
+	[data-theme='dark'] nav,
+	[data-theme='dark'] nav ul,
+	[data-theme='dark'] .dropdown-menu {
+	  background-color: var(--background) !important;
+	}
+
+	[data-theme='dark'] nav a,
+	[data-theme='dark'] .dropdown-toggle,
+	[data-theme='dark'] .dropdown-item {
+	  color: var(--nav-text-dark, rgba(255,255,255,0.9)) !important;
+	}
+
+	[data-theme='dark'] a:hover,
+	[data-theme='dark'] .dropdown-item:hover {
+	  color: var(--nav-hover-dark, #4db3ff) !important;
+	  background-color: var(--nav-bg-dark, rgba(13,75,130,0.9)) !important;
+	}
+
+	[data-theme='dark'] li[aria-current='page']::before {
+	  border-top-color: var(--nav-hover-dark, #4db3ff);
+	}
+
+	[data-theme='dark'] svg path {
+	  fill: var(--nav-text-dark, rgba(255,255,255,0.9));
+	}
+</style>

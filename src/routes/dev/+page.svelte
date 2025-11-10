@@ -1,7 +1,10 @@
-<section class="Project-Roadmap">
-  <h2>Project Roadmap</h2>
-  <ul>
-    <li><strong>Phase 1:</strong> Building the LFS System</li>
-    <li><strong>Phase 2:</strong> Add the libraries for the CTF</li>
-  </ul>
+<script>
+  import Roadmap from "$lib/components/Roadmap.svelte";
+</script>
+
+<section class="container mx-auto px-8 py-16">
+  <h1 class="text-3xl font-bold text-slate-700 mb-12 text-center">
+    Project Roadmap
+  </h1>
+  <Roadmap />
 </section>

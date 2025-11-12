@@ -177,93 +177,92 @@
 		opacity: 1;
 	}
 
-/* Dark Mode */
-:root {
-	--color-theme-1: #4db3ff; /* accent light blue */
-	--color-theme-2: #1e81d3; /* secondary blue */
-	--color-text: rgba(255, 255, 255, 0.9);
-	--color-bg-dark: #0a1523; /* dark navy background */
-	--color-surface-dark: #102842; /* panels / cards */
-	--color-hover: #2d91e8;
-}
-
-/* Base dark background */
+/* Dark Mode - Updated to match new dark gradient */
 :global([data-theme='dark'] body) {
-	background-color: var(--color-bg-dark);
-	color: var(--color-text);
+  /* Use the new gradient for depth */
+  background-color: var(--color-bg-1);
+  background-image:
+    radial-gradient(
+      50% 50% at 50% 50%,
+      rgba(255, 255, 255, 0.06) 0%,
+      rgba(255, 255, 255, 0) 100%
+    ),
+    linear-gradient(
+      180deg,
+      var(--color-bg-0) 0%,
+      var(--color-bg-1) 50%,
+      var(--color-bg-2) 100%
+    );
+  color: var(--color-text);
+  background-attachment: fixed;
+  background-size: 100vw 100vh;
 }
 
-/* Main title section */
+/* Main titles */
 :global([data-theme='dark']) .main h1 {
-	color: var(--color-theme-1);
+  color: var(--color-theme-1); /* accent light blue */
 }
-
 :global([data-theme='dark']) .main h2 {
-	color: var(--color-theme-2);
+  color: #2d91e8;
 }
 
-/* Make text readable */
+/* Paragraphs */
 :global([data-theme='dark'] .main p),
 :global([data-theme='dark'] p) {
-	color: rgba(235, 245, 255, 0.9); /* brighter, soft white-blue */
+  color: rgba(235, 245, 255, 0.9); /* readable soft white-blue */
 }
 
-/* Fix the Info box */
+/* Info section */
 :global([data-theme='dark']) .Infos {
-	background-color: var(--color-surface-dark);
-	color: var(--color-text);
-	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
-	border: 1px solid rgba(255, 255, 255, 0.05);
+  background-color: rgba(28, 62, 110, 0.95); /* lighter and more distinct from gradient */
+  color: rgba(235, 245, 255, 0.95);          /* soft white-blue text */
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.5);    /* slightly stronger shadow for separation */
 }
-
 :global([data-theme='dark']) .Infos h2 {
-	color: var(--color-theme-1);
+  color: var(--color-theme-1);
 }
 
 /* Buttons */
 :global([data-theme='dark']) button {
-	background-color: var(--color-theme-2);
-	color: white;
+  background-color: var(--color-theme-2);
+  color: white;
 }
-
 :global([data-theme='dark']) button:hover {
-	background-color: var(--color-theme-1);
-	transform: translateY(-3px);
-	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+  background-color: var(--color-theme-1);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
 }
-
 :global([data-theme='dark']) button a {
-	color: white;
-	text-decoration: none;
+  color: white;
+  text-decoration: none;
 }
 
 /* Get started card */
 :global([data-theme='dark']) .get-started .gs-inner {
-	background: rgba(255, 255, 255, 0.05);
-	border: 1px dashed rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px dashed rgba(255, 255, 255, 0.1);
 }
-
 :global([data-theme='dark']) .btn-cta {
-	border-color: rgba(255, 255, 255, 0.2);
-	color: var(--color-theme-1);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: var(--color-theme-1);
 }
-
 :global([data-theme='dark']) .btn-cta:hover {
-	border-color: var(--color-theme-1);
-	background: rgba(77, 179, 255, 0.1);
+  border-color: var(--color-theme-1);
+  background: rgba(77, 179, 255, 0.1);
 }
 
 /* Images */
 :global([data-theme='dark']) .image-content img {
-	filter: brightness(0.95) contrast(1.1);
+  filter: brightness(0.95) contrast(1.1);
 }
 
-/* Smooth transitions */
+/* Smooth transitions for dark mode */
 :global(body),
 :global(button),
 :global(a),
 :global(.Infos),
 :global(.gs-inner) {
-	transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 </style>

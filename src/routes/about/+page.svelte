@@ -157,36 +157,52 @@
     border: 1px solid #e5e7eb;
   }
 
-  /* Add dark mode styles */
+  /* Dark Mode */
   :global([data-theme='dark']) .section {
-    background: rgba(13, 75, 130, 0.2);
-    border-color: rgba(255, 255, 255, 0.1);
-    box-shadow: 0 4px 6px rgb(255, 255, 255);
+    background: rgba(28, 62, 110, 0.9);
+    border-color: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
   }
 
-  :global([data-theme='dark']) .feature-list li,
-  :global([data-theme='dark']) .team-member,
+  :global([data-theme='dark']) .feature-list li {
+    background: rgba(40, 75, 130, 0.85);
+    border-color: rgba(255, 255, 255, 0.15);
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  :global([data-theme='dark']) .team-member {
+    background: rgba(40, 75, 130, 0.85);
+    border-color: rgba(255, 255, 255, 0.15);
+    color: rgba(255, 255, 255, 0.85);
+  }
+
   :global([data-theme='dark']) .tech-item {
-    background: rgba(13, 75, 130, 0.3);
+    background: rgba(35, 70, 125, 0.85);
     border-color: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.85);
   }
 
   :global([data-theme='dark']) .tag {
-    background: var(--primary);
+    background: #4db3ff; /* brighter accent blue */
+    color: white;
   }
 
-  :global([data-theme='dark']) .team-member h3,
-  :global([data-theme='dark']) .section h2, 
-  :global([data-theme='dark']) .feature-list li, 
-  :global([data-theme='dark']) .tech-item {
-    color: rgba(255, 255, 255, 0.85);
+  :global([data-theme='dark']) .section h2,
+  :global([data-theme='dark']) .team-member h3 {
+    color: #cce0ff;
   }
 
   :global([data-theme='dark']) p,
   :global([data-theme='dark']) .subtitle {
-    color: rgba(255, 255, 255, 0.6);
+    color: rgba(235, 245, 255, 0.8);
   }
 
+  :global([data-theme='dark']) .section:hover {
+    box-shadow:
+      0 4px 10px rgba(0, 0, 0, 0.4),
+      0 0 12px rgba(77, 179, 255, 0.8);
+}
   @media (max-width: 640px) {
     .about-page {
       padding: 1rem;

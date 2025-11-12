@@ -39,13 +39,10 @@
 
 /* DARK THEME */
 [data-theme="dark"] {
-	--color-theme-1: #4db3ff;
-	--color-theme-2: #0d4b81;
-	--color-hover: #6ac0ff;
+	--color-bg-0: #1e5ba0; /* top — noticeably lighter blue */
+	--color-bg-1: #124070; /* mid — distinct mid-tone blue */
+	--color-bg-2: #0b2745; /* bottom — dark but not pitch black */
 
-	--color-bg-2: #0a1f3f;
-	--color-bg-1: #0d2a55;
-	--color-bg-0: #104080;
 	--color-bg-dropdown: rgba(13, 75, 130, 0.95);
 
 	--color-text: rgba(255, 255, 255, 0.85);
@@ -62,6 +59,7 @@
 	--nav-hover-dark: var(--color-theme-1);
 }
 
+
 /* GLOBAL STYLES */
 body {
 	min-height: 100vh;
@@ -77,9 +75,9 @@ body {
 }
 
 [data-theme="dark"] body {
-	background-color: var(--color-bg-1);
+		background-color: var(--color-bg-1);
 	background-image:
-		radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0) 100%),
+		radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0) 100%),
 		linear-gradient(180deg, var(--color-bg-0) 0%, var(--color-bg-1) 50%, var(--color-bg-2) 100%);
 }
 

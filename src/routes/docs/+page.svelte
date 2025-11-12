@@ -28,21 +28,46 @@
 	}
 
 /* Dark Mode */
+/* Dark Mode Sections */
 :global([data-theme='dark']) .Installation,
 :global([data-theme='dark']) .System-Overview,
 :global([data-theme='dark']) .Tools-and-Features {
-  background-color: rgba(20, 40, 75, 0.85); /* deep navy with some transparency */
-  border-color: rgba(255, 255, 255, 0.15); /* subtle border */
-  color: rgba(235, 240, 255, 0.9); /* soft off-white text for contrast */
-  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.75);
-  transition: background-color 0.3s ease, color 0.3s ease;
+  background-color: rgba(20, 40, 75, 0.85); /* deep navy */
+  border-color: rgba(255, 255, 255, 0.15);
+  color: rgba(235, 240, 255, 0.9);
+  box-shadow: none; /* remove default glow */
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Hover */
+:global([data-theme='dark']) .Installation:hover,
+:global([data-theme='dark']) .System-Overview:hover,
+:global([data-theme='dark']) .Tools-and-Features:hover {
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3); /* subtle glow on hover */
+}
+
+/* Headings and text */
 :global([data-theme='dark']) h2 {
-  color: #cce0ff;
+  color: #cce0ff; /* soft blue */
 }
 
 :global([data-theme='dark']) p {
-  color: rgba(220, 230, 255, 0.85);
+  color: rgba(220, 230, 255, 0.85); /* readable soft white-blue */
 }
+
+/* Markdown / code boxes inside sections */
+:global([data-theme='dark']) .Installation pre,
+:global([data-theme='dark']) .System-Overview pre,
+:global([data-theme='dark']) .Tools-and-Features pre {
+  background-color: rgba(60, 85, 130, 0.9); /* noticeably lighter than section bg */
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 6px;
+  padding: 0.75rem;
+  color: #e0f0ff; /* brighter text for readability */
+  overflow-x: auto;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
 </style>

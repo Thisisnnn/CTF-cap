@@ -26,3 +26,40 @@
   <div class={cardClasses.date}>{date}</div>
   <p class={cardClasses.content}>{content}</p>
 </div>
+
+<style>
+  /* Card container */
+  :global([data-theme='dark'] .w-full.bg-white) {
+    background-color: #2e3250 !important;  /* muted indigo */
+    border-color: #444b6b !important;
+    transition: box-shadow 0.3s ease !important;
+  }
+
+  /* Badge */
+  :global([data-theme='dark'] .bg-sky-50.text-sky-500) {
+    background-color: #d9b06c !important;  /* soft amber/gold */
+    color: #fff7e6 !important;             /* light cream icon */
+  }
+
+  /* Title */
+  :global([data-theme='dark'] .text-slate-700) {
+    color: #fef6e4 !important;             /* warm cream */
+  }
+
+  /* Date */
+  :global([data-theme='dark'] .bg-slate-50.text-slate-500.border-slate-200) {
+    background-color: #3a3f65 !important;  /* slightly lighter than card */
+    border-color: #565f86 !important;
+    color: #f2d9b3 !important;             /* soft pastel peach */
+  }
+
+  /* Content */
+  :global([data-theme='dark'] .text-slate-500) {
+    color: #f6e9d6 !important;             /* gentle warm cream text */
+  }
+
+  /* Hover glow around the card */
+  :global([data-theme='dark'] .w-full.bg-white:hover) {
+    box-shadow: 0 0 20px 10px rgba(217, 176, 108, 0.35) !important; /* soft golden glow */
+  }
+</style>

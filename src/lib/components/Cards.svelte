@@ -3,7 +3,7 @@
   export let content = "";
   export let date = "";
   export let icon = "";
-  export let id = "";
+  export const id = "";
 
   const cardClasses = {
     container: "w-full border border-slate-200 rounded-2xl p-6 bg-white hover:shadow-md transition cursor-pointer",

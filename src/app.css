@@ -1,6 +1,6 @@
 @import 'tailwindcss';
 @import '@fontsource/fira-mono';
-@plugin '@tailwindcss/typography';
+@import '@tailwindcss/typography';
 
 /* GLOBAL VARIABLES */
 

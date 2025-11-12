@@ -1,30 +1,11 @@
-<script>
-function copyCode(event) {
-  const button = /** @type {HTMLElement} */ (event.currentTarget);
-  const wrapper = button.closest('.code-wrapper');
-  const code = wrapper?.querySelector('pre code')?.innerText ?? '';
-  if (!code) return;
-
-  navigator.clipboard.writeText(code).then(() => {
-    const original = button.textContent;
-    button.textContent = 'Copied!';
-    setTimeout(() => (button.textContent = original ?? 'Copy'), 1500);
-  }).catch(() => {
-    button.textContent = 'Failed';
-    setTimeout(() => (button.textContent = 'Copy'), 1500);
-  });
-}
+<script lang="ts">
+	import Installation from '$lib/docs/Installation.svx';
 </script>
 
 <section class="Installation">
 	<h2>Installation</h2>
 	<p>To install the package, run the following command in your terminal:</p>
-	<div class="code-wrapper">
-		<button class="copy-btn" on:click={copyCode}>Copy</button>
-		<pre><code>git clone
-python3 installation.py
-</code></pre>
-	</div>
+		<Installation />
 </section>
 
 <section class="System-Overview">
@@ -46,36 +27,7 @@ python3 installation.py
 		background-color: #e3f2ff;
 	}
 
-	.code-wrapper {
-		position: relative;
-		display: block;
-		max-width: 100%;
-	}
-	.code-wrapper pre {
-		padding: 1rem; 
-		overflow: auto;
-		background: #f7fbfe;
-		border-radius: 6px;
-		border: 1px solid #e6f1fa;
-		margin: 0;
-		line-height: 1.35;
-	}
-	.copy-btn {
-		position: absolute;
-		top: 1rem; 
-		right: 0.5rem;
-		background: rgba(0,0,0,0.06);
-		border: 1px solid rgba(0,0,0,0.08);
-		padding: 0.25rem 0.5rem;
-		font-weight: 700;
-		font-size: 0.8rem;
-		border-radius: 4px;
-		cursor: pointer;
-		z-index: 5;
-	}
-	.copy-btn:active { transform: translateY(1px); }
-
-/* 🌙 Stylish Dark Mode for Documentation Sections */
+/* Dark Mode */
 :global([data-theme='dark']) .Installation,
 :global([data-theme='dark']) .System-Overview,
 :global([data-theme='dark']) .Tools-and-Features {
@@ -86,30 +38,6 @@ python3 installation.py
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-:global([data-theme='dark']) .code-wrapper pre {
-  background: rgba(10, 25, 55, 0.95);*
-  border-color: rgba(255, 255, 255, 0.1);
-  color: rgba(220, 230, 255, 0.95);
-  font-family: 'Fira Mono', monospace;
-  border-radius: 6px;
-  padding: 1rem;
-  overflow-x: auto;
-  box-shadow: inset 0 0 6px rgba(0,0,0,0.2);
-}
-
-:global([data-theme='dark']) .copy-btn {
-  background: rgba(30, 60, 110, 0.7);
-  border-color: rgba(255, 255, 255, 0.25);
-  color: rgba(220, 230, 255, 0.95);
-  font-weight: 700;
-  border-radius: 4px;
-  transition: background 0.3s ease;
-}
-
-:global([data-theme='dark']) .copy-btn:hover {
-  background: rgba(40, 90, 160, 0.85);
-}
-
 :global([data-theme='dark']) h2 {
   color: #cce0ff;
 }
@@ -117,5 +45,4 @@ python3 installation.py
 :global([data-theme='dark']) p {
   color: rgba(220, 230, 255, 0.85);
 }
-
 </style>

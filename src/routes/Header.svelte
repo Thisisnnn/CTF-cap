@@ -275,7 +275,7 @@
 	}
 
 	[data-theme='dark'] a:hover,
-	[data-theme='dark'] .dropdown-item:hover {
+	[data-theme='dark'] .dropdown-item:hover	 {
 	  color: var(--nav-hover-dark, #4db3ff) !important;
 	  background-color: var(--nav-bg-dark, rgba(13,75,130,0.9)) !important;
 	}

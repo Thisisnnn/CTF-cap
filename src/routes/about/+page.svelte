@@ -65,6 +65,7 @@
     text-align: center;
     margin-bottom: 0.5rem;
     background: linear-gradient(135deg, var(--primary), var(--secondary));
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }

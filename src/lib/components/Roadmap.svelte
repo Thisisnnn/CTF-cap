@@ -14,7 +14,7 @@
 </script>
 
 <div class="relative w-full min-h-screen py-16">
-  <!-- Central vertical line (visible on all screens) -->
+  <!-- Central vertical line -->
   <div class="absolute w-px h-full bg-slate-200 left-1/2 -translate-x-1/2"></div>
 
   <div class="flex flex-col space-y-24 lg:space-y-12">
@@ -43,7 +43,6 @@
             content={item.content}
             date={item.date}
             icon={item.icon}
-            id={item.id}
           />
         </div>
       </div>

@@ -1,0 +1,6 @@
+<script>
+  import CodeBlock from '$lib/components/CodeBlock.svelte';
+</script>
+
+<CodeBlock code={`git clone
+python3 installation.py`} />

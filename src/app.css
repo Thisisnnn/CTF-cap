@@ -39,9 +39,9 @@
 
 /* DARK THEME */
 [data-theme="dark"] {
-	--color-bg-0: #1e5ba0; /* top — noticeably lighter blue */
-	--color-bg-1: #124070; /* mid — distinct mid-tone blue */
-	--color-bg-2: #0b2745; /* bottom — dark but not pitch black */
+	--color-bg-0: #2263ad;
+	--color-bg-1: #144478;
+	--color-bg-2: #153d65;
 
 	--color-bg-dropdown: rgba(13, 75, 130, 0.95);
 

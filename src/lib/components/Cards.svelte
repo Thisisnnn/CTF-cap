@@ -30,32 +30,32 @@
 <style>
   /* Card container */
   :global([data-theme='dark'] .w-full.bg-white) {
-    background-color: #2e3250 !important;  /* muted indigo */
+    background-color: #2e3250 !important;
     border-color: #444b6b !important;
     transition: box-shadow 0.3s ease !important;
   }
 
   /* Badge */
   :global([data-theme='dark'] .bg-sky-50.text-sky-500) {
-    background-color: #d9b06c !important;  /* soft amber/gold */
-    color: #fff7e6 !important;             /* light cream icon */
+    background-color: #d9b06c !important;
+    color: #fff7e6 !important;
   }
 
   /* Title */
   :global([data-theme='dark'] .text-slate-700) {
-    color: #fef6e4 !important;             /* warm cream */
+    color: #fef6e4 !important;
   }
 
   /* Date */
   :global([data-theme='dark'] .bg-slate-50.text-slate-500.border-slate-200) {
-    background-color: #3a3f65 !important;  /* slightly lighter than card */
+    background-color: #3a3f65 !important;
     border-color: #565f86 !important;
-    color: #f2d9b3 !important;             /* soft pastel peach */
+    color: #f2d9b3 !important;
   }
 
   /* Content */
   :global([data-theme='dark'] .text-slate-500) {
-    color: #f6e9d6 !important;             /* gentle warm cream text */
+    color: #f6e9d6 !important;
   }
 
   /* Hover glow around the card */

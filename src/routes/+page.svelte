@@ -176,6 +176,10 @@
 		cursor: pointer;
 		opacity: 1;
 	}
+	.btn-cta:hover {
+		border-color: var(--color-theme-1);
+		background: rgba(77, 179, 255, 0.1);
+	}
 
 /* Dark Mode - Updated to match new dark gradient */
 :global([data-theme='dark'] body) {
@@ -229,7 +233,7 @@
   color: white;
 }
 :global([data-theme='dark']) button:hover {
-  background-color: var(--color-theme-1);
+  background-color: var(--color-bg-0);
   transform: translateY(-3px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
 }

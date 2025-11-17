@@ -49,7 +49,7 @@
     align-items: flex-start;
     justify-content: space-between;
 	margin-top: 80px;
-    height: 100vh;        /* make it full viewport height */
+    height: 100vh; /* make it full viewport height */
     box-sizing: border-box;
 }
 
@@ -181,9 +181,8 @@
 		background: rgba(77, 179, 255, 0.1);
 	}
 
-/* Dark Mode - Updated to match new dark gradient */
+/* Dark Mode */
 :global([data-theme='dark'] body) {
-  /* Use the new gradient for depth */
   background-color: var(--color-bg-1);
   background-image:
     radial-gradient(
@@ -204,7 +203,7 @@
 
 /* Main titles */
 :global([data-theme='dark']) .main h1 {
-  color: var(--color-theme-1); /* accent light blue */
+  color: var(--color-theme-1);
 }
 :global([data-theme='dark']) .main h2 {
   color: #2d91e8;
@@ -213,15 +212,15 @@
 /* Paragraphs */
 :global([data-theme='dark'] .main p),
 :global([data-theme='dark'] p) {
-  color: rgba(235, 245, 255, 0.9); /* readable soft white-blue */
+  color: rgba(235, 245, 255, 0.9);
 }
 
 /* Info section */
 :global([data-theme='dark']) .Infos {
-  background-color: rgba(28, 62, 110, 0.95); /* lighter and more distinct from gradient */
-  color: rgba(235, 245, 255, 0.95);          /* soft white-blue text */
+  background-color: rgba(28, 62, 110, 0.95); 
+  color: rgba(235, 245, 255, 0.95);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 4px 16px rgba(0,0,0,0.5);    /* slightly stronger shadow for separation */
+  box-shadow: 0 4px 16px rgba(0,0,0,0.5);
 }
 :global([data-theme='dark']) .Infos h2 {
   color: var(--color-theme-1);
@@ -262,11 +261,7 @@
 }
 
 /* Smooth transitions for dark mode */
-:global(body),
-:global(button),
-:global(a),
-:global(.Infos),
-:global(.gs-inner) {
+:global(body), :global(button), :global(a), :global(.Infos),:global(.gs-inner) {
   transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 </style>

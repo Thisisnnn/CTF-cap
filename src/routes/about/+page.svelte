@@ -184,19 +184,17 @@
   }
 
   :global([data-theme='dark']) .tag {
-    background: #4db3ff; /* brighter accent blue */
+    background: #4db3ff;
     color: white;
   }
 
-  :global([data-theme='dark']) .section h2,
-  :global([data-theme='dark']) .team-member h3 {
+  :global([data-theme='dark']) {.section h2, .team-member h3 {
     color: #cce0ff;
-  }
+  }}
 
-  :global([data-theme='dark']) p,
-  :global([data-theme='dark']) .subtitle {
+  :global([data-theme='dark']) {p, .subtitle {
     color: rgba(235, 245, 255, 0.8);
-  }
+  }}
 
   :global([data-theme='dark']) .section:hover {
     box-shadow:

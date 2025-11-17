@@ -79,7 +79,7 @@
   }
 
   :global([data-theme='dark']) .blog-post {
-    background: rgba(20, 40, 75, 0.85); /* deep navy */
+    background: rgba(20, 40, 75, 0.85);
     border-color: rgba(255, 255, 255, 0.15);
     box-shadow: 0 4px 10px rgba(255, 255, 255, 0.25);
   }

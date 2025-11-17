@@ -17,7 +17,7 @@
 		document.documentElement.setAttribute('data-theme', darkMode ? 'dark' : 'light');
 	}
 
-	// New: helper functions so you can override navbar dark-mode colors at runtime
+	// Helper functions so you can override navbar dark-mode colors at runtime
 	export function setNavDarkBackground(color: string) {
 		document.documentElement.style.setProperty('--nav-bg-dark', color);
 	}
@@ -98,22 +98,21 @@
 
 	/* Corner button styling */
 .corner button {
-  background: none;      /* removes default button background */
-  border: none;          /* removes border */
-  padding: 0;            /* remove extra padding */
-  cursor: pointer;       /* pointer cursor on hover */
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
 }
 
 .corner button:focus,
 .corner button:hover {
-  outline: none;         /* removes the focus outline */
-  background: none;      /* prevents any hover background */
+  outline: none;
+  background: none; /* Prevents any hover background */
 }
 
 	nav {
 		display: flex;
 		justify-content: center;
-		/* use the global nav variable so dark mode can swap it */
 		--background: var(--nav-bg, rgba(255, 255, 255, 0.7));
 		width: fit-content;
 	}
@@ -176,9 +175,8 @@
 		color: var(--color-theme-1);
 	}
 
-	/* Global dropdown styles */
-	:global(.dropdown-toggle),
-	:global(.dropdown-item) {
+	/* Dropdown */
+	:global(.dropdown-toggle), :global(.dropdown-item) {
 		font-weight: 700 !important;
 		font-size: 0.8rem !important;
 		text-transform: uppercase !important;
@@ -198,15 +196,12 @@
 		box-shadow: 0 2px 5px rgba(0,0,0,0.1) !important;
 	}
 
-	:global(.dropdown-item:hover),
-	:global(.dropdown-toggle:hover) {
+	:global(.dropdown-item:hover), :global(.dropdown-toggle:hover) {
 		color: var(--color-theme-1) !important;
 		background-color: transparent !important;
 	}
 
-	:global(.dropdown-item:active),
-	:global(.dropdown-item:focus),
-	:global(.dropdown-item.active) {
+	:global(.dropdown-item:active), :global(.dropdown-item:focus), :global(.dropdown-item.active) {
 		background-color: transparent !important;
 		color: var(--color-text) !important;
 	}
@@ -215,11 +210,7 @@
 		margin-left: 0.5em !important;
 	}
 
-	:global(.dropdown-item),
-	:global(.dropdown-item:active),
-	:global(.dropdown-item:focus),
-	:global(.dropdown-item.active),
-	:global(.dropdown-item:active) {
+	:global(.dropdown-item), :global(.dropdown-item:active), :global(.dropdown-item:focus), :global(.dropdown-item.active), :global(.dropdown-item:active) {
 		background-color: transparent !important;
 		transition: none !important;
 		color: var(--color-text) !important;
@@ -255,27 +246,20 @@
 		align-items: center !important;
 	}
 
-	/* 🌙 DARK MODE - use CSS variables so the color is easy to override */
-	/* set the per-nav background variable from the dark-theme variable */
+	/* DARK MODE  */
 	[data-theme='dark'] nav {
 	  --background: var(--nav-bg-dark, rgba(13,75,130,0.9)) !important;
 	}
 
-	/* use the per-nav background for the containers so svg/ul/dropdowns follow */
-	[data-theme='dark'] nav,
-	[data-theme='dark'] nav ul,
-	[data-theme='dark'] .dropdown-menu {
+	[data-theme='dark'] nav, [data-theme='dark'] nav ul, [data-theme='dark'] .dropdown-menu {
 	  background-color: var(--background) !important;
 	}
 
-	[data-theme='dark'] nav a,
-	[data-theme='dark'] .dropdown-toggle,
-	[data-theme='dark'] .dropdown-item {
+	[data-theme='dark'] nav a, [data-theme='dark'] .dropdown-toggle, [data-theme='dark'] .dropdown-item {
 	  color: var(--nav-text-dark, rgba(255,255,255,0.9)) !important;
 	}
 
-	[data-theme='dark'] a:hover,
-	[data-theme='dark'] .dropdown-item:hover	 {
+	[data-theme='dark'] a:hover, [data-theme='dark'] .dropdown-item:hover	 {
 	  color: var(--nav-hover-dark, #4db3ff) !important;
 	  background-color: var(--nav-bg-dark, rgba(13,75,130,0.9)) !important;
 	}
